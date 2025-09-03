@@ -5,8 +5,7 @@ public class ConditionalChallenge {
         boolean isCold = true;
         if (isCold) {
             temperature -= 15;
-        }
-        else {
+        } else {
             temperature += 10;
         }
         // Part 1: Temperature Converter
@@ -17,8 +16,7 @@ public class ConditionalChallenge {
         if (score >= 70) {
             System.out.println("Passed");
             System.out.println(score + "Passed");
-        }
-        else {
+        } else {
             System.out.println("Failed");
             System.out.println(score + " Failed");
         }
@@ -26,20 +24,30 @@ public class ConditionalChallenge {
         int temperature2 = 70;
         if (temperature2 > 80) {
             System.out.println(temperature2 + " Summer");
-        }
-        else if (temperature2 > 60 && temperature2 < 80) {
+        } else if (temperature2 > 60 && temperature2 < 80) {
             System.out.println(temperature2 + " Spring");
-        }
-        else if (temperature2 > 40 && temperature2 < 59) {
+        } else if (temperature2 > 40 && temperature2 < 59) {
             System.out.println(temperature2 + " Fall");
-        }
-        else {
+        } else {
             System.out.println(temperature2 + " Winter");
         }
         // Part 4: Number Classifier
         int number = 6;
-        if (number < 0) {
-            
+        if (number > 0) {
+            if (number > 100) {
+                System.out.println("Positive, Large");
+            } else {
+                System.out.println("Positive");
+            }
+            System.out.println("Positive");
+        } else if (number < 0) {
+            if (number < -100) {
+                System.out.println("Positive, Very Negative");
+            } else {
+                System.out.println("negative");
+            }
+        } else {
+            System.out.println("zero");
         }
     }
 }
