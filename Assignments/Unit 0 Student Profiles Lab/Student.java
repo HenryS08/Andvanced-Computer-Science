@@ -16,7 +16,20 @@ public class Student {
         this.id = generateId();
     }
 
+    public String toString() {
+        String details = name + " is a " + grade + " grade student. Their id is " + id;
+        return details;
+    }
+
+    public boolean equals(Student other) {
+        return this.name.equals(other.name) 
+        && this.name.equals(other.id) && this.grade == (other.grade);
+    }
+
     public String generateId() {
+        this.id = ((int) ((Math.random() * 7) + 1) + "" + (int) ((Math.random() * 7) + 1) + "" 
+            + (int) ((Math.random() * 7) + 1) + "-" + (int) (Math.random() * 9) 
+            + (int) (Math.random() * 9) + (int) (Math.random() * 9) + (int) (Math.random() * 9));
         return id;
     }
 
