@@ -22,8 +22,7 @@ public class Student {
     }
 
     public boolean equals(Student other) {
-        return this.name.equals(other.name) 
-        && this.name.equals(other.id) && this.grade == (other.grade);
+        return this.name.equals(other.name) && this.id.equals(other.id) && this.grade == other.grade;
     }
 
     public String generateId() {

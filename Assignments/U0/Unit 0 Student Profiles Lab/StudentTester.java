@@ -25,5 +25,11 @@ public class StudentTester {
 
         // testing equals
         System.out.println(henry.equals(max));
+        max.setGrade(henry.getGrade());
+        max.setId(henry.getId());
+        max.setName(henry.getName());
+        System.out.println(henry.equals(max));
+        System.out.println(henry.toString());
+        System.out.println(max.toString());
     }
 }
