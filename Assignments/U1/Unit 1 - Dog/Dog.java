@@ -23,7 +23,7 @@ public class Dog {
         ownerName = "Henry";
         age = 5;
         dogId = 111;
-        dogChar = generateDogChar();
+        this.dogChar = Dog.generateDogChar(this.dogId);
         dogTag = generateDogTag();
         stillInFacility = true;
     }
@@ -49,12 +49,26 @@ public class Dog {
                 && this.stillInFacility == other.stillInFacility;
     }
 
-    public char generateDogChar() {
+    public static char generateDogChar(int dogId) {
         return (char) ((int) 'F' + (((dogId % 10) + (dogId / 100) + ((dogId / 10) % 10)) % 10));
     }
 
     public String generateDogTag() {
         return "" + dogChar + dogId;
+    }
+
+    public static String pickup(Dog dog, String personName) {
+        if (dog.getOwnerName().equals(personName)) {
+            dog.setStillInFacility(false);
+            return dog.getName() + " has been picked up by their owner " + dog.getOwnerName() + ".";
+        } else {
+            return "Wrong owner!";
+        }
+    }
+
+    public static void checkin(Dog dog, String personName) {
+        dog.setStillInFacility(true);
+        personName = dog.getOwnerName();
     }
 
     public String getName() {

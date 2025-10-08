@@ -14,8 +14,10 @@ public class DogTester {
         System.out.println(dog.getStillInFacility());
 
         //testing setters
-        System.out.println(setName(newName));
-        System.out.println(setOwnerName(newOwnerName)); 
+        dog.setName("newName");
+        System.out.println(dog.getName());
+        dog.setOwnerName("newOwnerName");
+        System.out.println(dog.getOwnerName()); 
 
         //testing methods
         System.out.println(dog.generateDogTag());
@@ -24,8 +26,8 @@ public class DogTester {
         System.out.println(dog.toString());
         System.out.println(dog1.toString());
         System.out.println(dog2.toString());
-        yes = dog.setStillInFacility(false);
-        System.out.println(yes);
+        dog.setStillInFacility(false);
+        System.out.println(dog.getStillInFacility());
     }
 }
 
