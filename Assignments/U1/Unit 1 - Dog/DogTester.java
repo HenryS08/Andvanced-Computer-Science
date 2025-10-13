@@ -20,14 +20,30 @@ public class DogTester {
         System.out.println(dog.getOwnerName()); 
 
         //testing methods
-        System.out.println(dog.generateDogTag());
-        System.out.println(dog1.generateDogTag());
-        System.out.println(dog2.generateDogTag());
+        System.out.println(PawesomeUtils.generateDogTag(dog.getDogId(), dog.getDogChar()));
+        System.out.println(PawesomeUtils.generateDogTag(dog1.getDogId(), dog1.getDogChar()));
+        System.out.println(PawesomeUtils.generateDogTag(dog2.getDogId(), dog2.getDogChar()));
         System.out.println(dog.toString());
         System.out.println(dog1.toString());
         System.out.println(dog2.toString());
         dog.setStillInFacility(false);
         System.out.println(dog.getStillInFacility());
+
+        //testing static methods
+        System.out.println(PawesomeUtils.validateDogId(100));
+        System.out.println(PawesomeUtils.validateDogId(99));
+        System.out.println(PawesomeUtils.validateDogId(1000));
+
+        System.out.println(PawesomeUtils.validateDogTag(dog));
+        System.out.println(PawesomeUtils.validateDogTag(dog1));
+        System.out.println(PawesomeUtils.validateDogTag(dog2));
+
+        //Test edge cases with validateDogTag():
+        dog.setDogId(500);
+        System.out.println(PawesomeUtils.validateDogTag(dog));
+
+    
+
     }
 }
 
