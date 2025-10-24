@@ -5,7 +5,7 @@ public class PawesomeUtils {
     }
 
     public static String generateDogTag(int dogId, char dogChar) {
-        return "" + dogChar + dogId;
+        return "" + PawesomeUtils.validateDogId(dogId) + dogChar;
     }
 
     public static String pickup(Dog dog, String personName) {
@@ -32,14 +32,13 @@ public class PawesomeUtils {
         if (dogId >= 100 && dogId <= 999) {
             return dogId;
         } else {
-            return Utils.generateRandomNumber(100, 1000);
+            return PawesomeUtils.generateRandomNumber(100, 1000);
         }
     }
 
     public static boolean validateDogTag(Dog dog) {
-        String newDogTag =
-                "" + PawesomeUtils.generateDogChar(PawesomeUtils.validateDogId(dog.getDogId()))
-                        + PawesomeUtils.validateDogId(dog.getDogId());
+        String newDogTag = "" + PawesomeUtils.validateDogId(dog.getDogId())
+                + PawesomeUtils.generateDogChar(PawesomeUtils.validateDogId(dog.getDogId()));
         return newDogTag.equals(dog.getDogTag());
     }
 
@@ -61,6 +60,10 @@ public class PawesomeUtils {
         } else {
             return (humanYears - 24) / 5 + 2;
         }
+    }
+
+    public static int generateRandomNumber(int low, int high) {
+        return (int) (Math.random() * (high - low) + low);
     }
 
 }
